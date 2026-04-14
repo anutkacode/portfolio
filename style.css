@@ -1,0 +1,31 @@
+.body {
+    background-color: white;
+    color: black;
+}
+
+.header, .footer {
+    background-color: gold;
+    padding: 20px;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    color: black;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.button {
+    background-color: gold;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: darkgoldenrod;
+}
