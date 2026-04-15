@@ -156,9 +156,26 @@
 </div>
 
 <script>
-    let count = localStorage.getItem('visitorCount') || 0;
-    count++;
-    localStorage.setItem('visitorCount', count);
-    document.getElementById('count').innerText = count;
-</script></body>
+    // Генеруємо унікальний ID девайса
+    function generateDeviceId() {
+        return 'device_' + Math.random().toString(36).substr(2, 9) + '_' + Date.now();
+    }
+    
+    // Перевіряємо, чи вже цей девайс заходив
+    var deviceId = localStorage.getItem('deviceId');
+    if (!deviceId) {
+        // Новий девайс - генеруємо ID
+        deviceId = generateDeviceId();
+        localStorage.setItem('deviceId', deviceId);
+    }
+    
+    // Рахуємо переглади тільки для цього девайса
+    var viewKey = 'views_' + deviceId;
+    var views = localStorage.getItem(viewKey) || '0';
+    views = parseInt(views) + 1;
+    localStorage.setItem(viewKey, views);
+    
+    // Показуємо кількість переглядів
+    document.getElementById('count').innerText = views;
+</script>/body>
   </html>
