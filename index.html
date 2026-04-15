@@ -151,5 +151,14 @@
     <footer>
         <p>&copy; 2026 Анна Іванкова. Всі права захищені. 💛</p>
     </footer>
-</body>
+<div id="visitor-counter" style="text-align: center; margin: 30px 0; padding: 20px; background-color: #fafafa; border-top: 3px solid #FFD700;">
+    <p style="font-size: 18px; color: #000; font-weight: bold;">👁️ Переглядів: <span id="count" style="color: #FFD700; font-size: 24px;">0</span></p>
+</div>
+
+<script>
+    let count = localStorage.getItem('visitorCount') || 0;
+    count++;
+    localStorage.setItem('visitorCount', count);
+    document.getElementById('count').innerText = count;
+</script></body>
   </html>
