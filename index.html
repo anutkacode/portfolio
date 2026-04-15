@@ -168,14 +168,5 @@
         deviceId = generateDeviceId();
         localStorage.setItem('deviceId', deviceId);
     }
-    
-    // Рахуємо переглади тільки для цього девайса
-    var viewKey = 'views_' + deviceId;
-    var views = localStorage.getItem(viewKey) || '0';
-    views = parseInt(views) + 1;
-    localStorage.setItem(viewKey, views);
-    
-    // Показуємо кількість переглядів
-    document.getElementById('count').innerText = views;
-</script>/body>
+    </body>
   </html>
